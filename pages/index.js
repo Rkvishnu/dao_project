@@ -79,7 +79,7 @@ export default function Home() {
 
   // Calls the `createProposal` function in the contract, using the tokenId from `fakeNftTokenId`
   const createProposal = async () => {
-    // try {
+    try {
       const signer = await getProviderOrSigner(true);
       const daoContract = getDaoContractInstance(signer);
       const txn = await daoContract.createProposal(fakeNftTokenId);
@@ -87,10 +87,10 @@ export default function Home() {
       await txn.wait();
       await getNumProposalsInDAO();
       setLoading(false);
-    // } catch (error) {
-    //   console.error(error);
-    //   window.alert(error.data.message);
-    // }
+    } catch (error) {
+      console.error(error);
+      window.alert(error.data.message);
+    }
   };
 
   // Helper function to fetch and parse one proposal from the DAO contract
@@ -371,7 +371,7 @@ export default function Home() {
           {renderTabs()}
         </div>
         <div>
-          <image className={styles.image} src="/cryptodevs/0.svg"  alt=" " />
+          <img className={styles.image} src="/cryptodevs/0.svg" />
         </div>
       </div>
 

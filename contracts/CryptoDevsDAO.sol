@@ -73,10 +73,10 @@ contract CryptoDevsDAO is Ownable {
 
     // Create a modifier which only allows a function to be
     // called by someone who owns at least 1 CryptoDevsNFT
-    modifier nftHolderOnly() {
-        require(cryptoDevsNFT.balanceOf(msg.sender) > 0, "NOT_A_DAO_MEMBER");
-        _;
-    }
+    // modifier nftHolderOnly() {
+    //     require(cryptoDevsNFT.balanceOf(msg.sender)>0, "NOT_A_DAO_MEMBER");
+    //     _;
+    // }
 
     // Create a modifier which only allows a function to be
     // called if the given proposal's deadline has not been exceeded yet
@@ -116,7 +116,7 @@ contract CryptoDevsDAO is Ownable {
     // @return Returns the proposal index for the newly created proposal
     function createProposal(uint256 _nftTokenId)
         external
-        nftHolderOnly
+      
         returns (uint256)
     {
         require(nftMarketplace.available(_nftTokenId), "NFT_NOT_FOR_SALE");
@@ -135,7 +135,7 @@ contract CryptoDevsDAO is Ownable {
     // @param vote - the type of vote they want to cast
     function voteOnProposal(uint256 proposalIndex, Vote vote)
         external
-        nftHolderOnly
+    
         activeProposalOnly(proposalIndex)
     {
         Proposal storage proposal = proposals[proposalIndex];
@@ -166,7 +166,7 @@ contract CryptoDevsDAO is Ownable {
     /// @param proposalIndex - the index of the proposal to execute in the proposals array
     function executeProposal(uint256 proposalIndex)
         external
-        nftHolderOnly
+
         inactiveProposalOnly(proposalIndex)
     {
         Proposal storage proposal = proposals[proposalIndex];
