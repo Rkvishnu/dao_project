@@ -1,7 +1,7 @@
-export const CRYPTODEVS_DAO_CONTRACT_ADDRESS = "0xbFC011D4b4c14D3584baf61e6be74C1210583489";
-export const CRYPTODEVS_NFT_CONTRACT_ADDRESS = "0x06B4A2534e40d84F6035883485BFA49cf57B240e";
+export const CRYPTODEVS_DAO_CONTRACT_ADDRESS = "0x5eE2D38dB69bf4e0CaAAddc4Ef25E6eb95f80b1e";
+export const CRYPTODEVS_NFT_CONTRACT_ADDRESS = "0x39746b362014707d2374Ed8c4d23a4483ae77356";
 
-export const CRYPTODEVS_DAO_ABI =[
+export const CRYPTODEVS_DAO_ABI =  [
   {
     "inputs": [
       {
@@ -187,9 +187,9 @@ export const CRYPTODEVS_DAO_ABI =[
     "stateMutability": "payable",
     "type": "receive"
   }
-]
+];
 
-export const CRYPTODEVS_NFT_ABI  = [
+export const CRYPTODEVS_NFT_ABI  =  [
   {
     "inputs": [
       {
@@ -771,4 +771,4 @@ export const CRYPTODEVS_NFT_ABI  = [
     "stateMutability": "payable",
     "type": "receive"
   }
-]
+] 
